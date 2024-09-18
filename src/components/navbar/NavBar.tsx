@@ -1,24 +1,24 @@
 import { FC, ReactElement } from "react";
-import NavBarLinks from "./navbarLinks/NavBarLinks";
 import { Link } from "react-router-dom";
+import NavBarLinks from "./navbarLinks/NavBarLinks";
 
-import styles from "./navBarStyle.module.css"
+import defaultCompanyLogo from "../../assets/logo/default_company_logo.svg";
 import CustomNavLink from "../link/CustomNavLink";
 import CompanyLogo from "../logo/CompanyLogo";
+import styles from "./navBarStyle.module.css";
 
-const NavBar:FC = () => {
-
-	const linkElements:ReactElement<typeof Link>[] = [
-		<CustomNavLink name="Home" to="/" />
-	]
+const NavBar: FC = () => {
+	const linkElements: ReactElement<typeof Link>[] = [
+		<CustomNavLink name="Home" to="/" />,
+		<CustomNavLink name="Log in" to="/login" />,
+	];
 
 	return (
 		<div className={styles.navbar}>
-			<CompanyLogo name="company logo" imgSrc="../../assets/someIMage.png" /> {/* Change the image src to a valid one.*/}
-			<NavBarLinks links = { linkElements }/>
-			
+			<CompanyLogo name="company logo" imgSrc={defaultCompanyLogo} />
+			<NavBarLinks links={linkElements} />
 		</div>
-	)
-}
+	);
+};
 
-export default NavBar
+export default NavBar;
