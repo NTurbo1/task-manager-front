@@ -1,18 +1,19 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-import styles from "./customNavLinkStyle.module.css"
+import styles from "./customNavLinkStyle.module.css";
 
 interface CustomNavLinkProps {
-	name:string
-	to: string
+	name: string;
+	to: string;
 }
 
-const CustomNavLink:FC<CustomNavLinkProps> = ({ name, to }):JSX.Element => {
-
+const CustomNavLink: FC<CustomNavLinkProps> = ({ name, to }): JSX.Element => {
 	return (
-		<Link to={to} className={styles.customLink}>{ name }</Link>
-	)
-} 
+		<Link to={to} className={styles.customLink}>
+			{name}
+		</Link>
+	);
+};
 
-export default CustomNavLink
+export default CustomNavLink;
